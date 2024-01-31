@@ -11,7 +11,6 @@ token = os.getenv("dc")
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        # guild_ids = [1162965749061664819] # Put your server ID in this array.
 
     async def on_message(self, message):
         global chat
