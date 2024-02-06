@@ -13,7 +13,6 @@ token = os.getenv("dc")
 
 class MyClient(discord.Client):
     async def on_ready(self):
-        # await tree.sync(guild=discord.Object(id=1162965749061664819))
         await tree.sync()
         print(f'Logged on as {self.user}!')
 
@@ -81,7 +80,6 @@ tree = app_commands.CommandTree(client)
 @tree.command(
   name="purge",
   description="Delete a specified number of messages.",
-  # guild=discord.Object(id=1162965749061664819) 
 )
 async def purge(interaction: discord.Interaction, amount: int):
   await interaction.response.defer(ephemeral=True)
@@ -91,7 +89,6 @@ async def purge(interaction: discord.Interaction, amount: int):
 @tree.command(
   name="ping",
   description="Check if the bot is online.",
-  # guild=discord.Object(id=1162965749061664819) 
 )
 async def ping(interaction: discord.Interaction):
   start_time = discord.utils.utcnow()
@@ -103,8 +100,7 @@ async def ping(interaction: discord.Interaction):
 #nuke command.
 @tree.command(
   name="nuke",
-  description="Clon",
-  # guild=discord.Object(id=1162965749061664819)
+  description="Clone and Deletes the channel.",
 )
 async def nuke(interaction: discord.Interaction, channel: Optional[TextChannel] = None):
   if channel is None:
