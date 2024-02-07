@@ -32,9 +32,10 @@ class MyClient(discord.Client):
             
           if message.content.startswith('$help'):
             embed = discord.Embed(title='Help', description='List of available commands:', color=0x00ff00)
-            embed.add_field(name='$ping', value='Replies Pong.', inline=False)
-            embed.add_field(name='$help', value='Show this help message.', inline=False)
-            embed.add_field(name='$purge', value='Delete a specified number of messages.', inline=False)
+            embed.add_field(name='ping', value='Replies Pong.', inline=False)
+            embed.add_field(name='help', value='Show this help message.', inline=False)
+            embed.add_field(name='purge', value='Delete a specified number of messages.', inline=False)
+            embed.add_field(name='Nuke', value='Clone and delete existing channel.', inline=False)
             await message.channel.send(embed=embed)
             return
           if message.content.startswith('$purge'):
