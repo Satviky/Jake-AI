@@ -38,6 +38,11 @@ class MyClient(discord.Client):
             embed.add_field(name='Nuke', value='Clone and delete existing channel.', inline=False)
             await message.channel.send(embed=embed)
             return
+          if message.content.startswith('$info'):
+            embed = discord.Embed(title='Info', description='Make by: [https://discordapp.com/users/761946306661842974](Satviky)', color=0x000100)
+            embed.add_field(name='Server Link', value='https://discord.gg/szgKazshPV', inline=False)
+            await message.channel.send(embed=embed)
+            return   
           if message.content.startswith('$purge'):
             if message.author.guild_permissions.manage_messages:
                 try:
